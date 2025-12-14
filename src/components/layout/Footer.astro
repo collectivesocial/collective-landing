@@ -1,0 +1,72 @@
+---
+import Social from "../ui/Social.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+const [staticData] = await getCollection("staticData");
+const {
+  github,
+  alias,
+  instagram,
+  email,
+  youtube,
+  linkedin,
+  emailIconName,
+  youtubeIconName,
+  linkedinIconName,
+  instagramIconName,
+  githubIconName,
+} = staticData.data;
+---
+
+<footer
+  class="relative bottom-0 w-full px-4 py-8 font-medium text-blacktext dark:bg-transparent dark:border-b-2 dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
+  role="contentinfo"
+  aria-label="Site footer"
+>
+  <nav
+    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
+    aria-label="Footer navigation"
+  >
+    <div
+      class="relative h-6 cursor-pointer hover:text-mint-500 transition-all"
+    >
+      <a href="/" aria-label="Return to homepage" class="flex items-center gap-2">
+        <!-- Basket icon -->
+        <Icon name="basket" class="w-6 h-6 text-mint-500 dark:invert" aria-hidden="true" />
+        <span class="text-mint-500 dark:text-white font-bold text-xl">Collective</span>
+      </a>
+    </div>
+    <div class="text-center">
+      <a
+        href={github}
+        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
+        aria-label="About the website development"
+        >Developed by <strong
+          >{alias}</strong
+        ></a
+      >
+    </div>
+    <div
+      class="flex items-center justify-center gap-5"
+      role="group"
+      aria-label="Social media links"
+    >
+      <Social
+        link={`mailto:${email}`}
+        iconName={emailIconName}
+        label={`Send email to ${email}`}
+      />
+      <Social
+        link={github}
+        iconName={githubIconName}
+        label={`Visit ${alias} on GitHub`}
+      />
+      <Social
+        link={linkedin}
+        iconName={linkedinIconName}
+        label={`Visit ${alias} on LinkedIn`}
+      />
+    </div>
+  </nav>
+</footer>

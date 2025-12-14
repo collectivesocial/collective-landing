@@ -1,0 +1,14 @@
+---
+import Project from "./Project.astro";
+import Heading from "../ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+const allPosts = await Astro.glob("../../pages/portfolio/projects/*.md");
+
+// Sort by descending date (most recent first)
+allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime(),
+);
+---
