@@ -4,19 +4,7 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
-const {
-  github,
-  alias,
-  instagram,
-  email,
-  youtube,
-  linkedin,
-  emailIconName,
-  youtubeIconName,
-  linkedinIconName,
-  instagramIconName,
-  githubIconName,
-} = staticData.data;
+const { github, email, githubIconName, emailIconName } = staticData.data;
 ---
 
 <footer
@@ -28,44 +16,47 @@ const {
     class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
     aria-label="Footer navigation"
   >
-    <div
-      class="relative h-6 cursor-pointer hover:text-mint-500 transition-all"
-    >
-      <a href="/" aria-label="Return to homepage" class="flex items-center gap-2">
-        <!-- Basket icon -->
-        <Icon name="basket" class="w-6 h-6 text-mint-500 dark:invert" aria-hidden="true" />
-        <span class="text-mint-500 dark:text-white font-bold text-xl">Collective</span>
+    <div class="relative h-6 cursor-pointer hover:text-mint-500 transition-all">
+      <a
+        href="/"
+        aria-label="Return to Collective Social homepage"
+        class="flex items-center gap-2"
+      >
+        <Icon
+          name="basket"
+          class="w-6 h-6 text-mint-500 dark:invert"
+          aria-hidden="true"
+        />
+        <span class="text-mint-500 dark:text-white font-bold text-xl"
+          >Collective</span
+        >
       </a>
     </div>
     <div class="text-center">
-      <a
-        href={github}
-        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
-        aria-label="About the website development"
-        >Developed by <strong
-          >{alias}</strong
-        ></a
-      >
+      <p class="text-sm text-blacktext/60 dark:text-gray-500">
+        &copy; {new Date().getFullYear()} Collective Social &middot;
+        <a
+          href="mailto:brittany@balancedengineer.com"
+          class="hover:text-mint-500 transition-all underline"
+        >
+          brittany@balancedengineer.com
+        </a>
+      </p>
     </div>
     <div
       class="flex items-center justify-center gap-5"
       role="group"
-      aria-label="Social media links"
+      aria-label="Social media and contact links"
     >
       <Social
         link={`mailto:${email}`}
         iconName={emailIconName}
-        label={`Send email to ${email}`}
+        label="Send email to brittany@balancedengineer.com"
       />
       <Social
         link={github}
         iconName={githubIconName}
-        label={`Visit ${alias} on GitHub`}
-      />
-      <Social
-        link={linkedin}
-        iconName={linkedinIconName}
-        label={`Visit ${alias} on LinkedIn`}
+        label="Visit Collective Social on GitHub"
       />
     </div>
   </nav>

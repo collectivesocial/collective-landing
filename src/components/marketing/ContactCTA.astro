@@ -1,0 +1,36 @@
+---
+import Heading from "../ui/Heading.astro";
+import Button from "../ui/Button.astro";
+---
+
+<section id="contact" aria-label="Contact Collective Social">
+  <div
+    class="w-full border-b bg-linear-to-b from-mint-100 to-transparent dark:from-mint-800 dark:border-mint-950 border-mint-100"
+  >
+    <div class="mx-auto max-w-5xl px-8 py-24 max-sm:py-12">
+      <div
+        class="flex items-center justify-between max-sm:flex-col max-sm:gap-8 max-sm:text-center"
+      >
+        <div class="max-w-lg">
+          <Heading
+            text="Have questions?"
+            textGradient="Get in touch."
+            level={2}
+          />
+          <p class="mt-4 text-blacktext/70 dark:text-gray-400">
+            We'd love to hear from you&mdash;whether you have feedback, want
+            early access, or just want to say hi.
+          </p>
+        </div>
+        <div class="transition-all duration-500 hover:scale-110">
+          <Button
+            variant="big"
+            link="mailto:brittany@balancedengineer.com"
+            text="Contact Us"
+            iconName="envelope"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

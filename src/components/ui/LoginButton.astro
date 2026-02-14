@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+const collectiveLoginUrl = import.meta.env.PUBLIC_LOGIN_URL;
+---
+
+<a
+  href={collectiveLoginUrl}
+  class="z-2 text-center cursor-pointer leading-none hover:scale-110 w-fit font-semibold flex gap-2 transition-all ease-in-out justify-center items-center rounded-full bg-linear-to-r from-riptide-500 to-mint-500 text-white px-5 py-2.5 text-sm hover:shadow-[0_10px_30px_rgba(13,188,130,0.4)]"
+  aria-label="Sign in to Collective Social"
+>
+  <Icon name="rocket" class="w-4 h-4" aria-hidden="true" />
+   Sign In
+</a>

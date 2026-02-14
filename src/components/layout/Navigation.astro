@@ -1,28 +1,31 @@
 ---
 import Social from "../ui/Social.astro";
+import LoginButton from "../ui/LoginButton.astro";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+const { github, githubIconName } = staticData.data;
 
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
 const menu = {
+  features: { name: "Features", path: "/#features" },
+  "how-it-works": { name: "How It Works", path: "/#how-it-works" },
   blog: {
     name: "Blog",
     path: "/blog/",
     dropdown: [{ name: "All Posts", path: "/blog/posts/" }],
   },
-  docs: { name: "Docs", path: "/docs" },
 };
 
 // Common base classes
 const baseClasses = {
   nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
-  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
+  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
+  loginContainer: "flex items-center justify-center md:hidden mt-4",
   dropdown: "relative group flex items-center",
   dropdownMenu:
     "absolute left-0 top-full hidden group-hover:block bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
@@ -160,7 +163,9 @@ const baseClasses = {
     role="group"
     aria-label="Social Media Links"
   >
-    <Social link={github} iconName={githubIconName} />
-    <Social link={linkedin} iconName={linkedinIconName} />
+    <Social link={github} iconName={githubIconName} label="Visit Collective Social on GitHub" />
+  </div>
+  <div class={baseClasses.loginContainer}>
+    <LoginButton />
   </div>
 </nav>

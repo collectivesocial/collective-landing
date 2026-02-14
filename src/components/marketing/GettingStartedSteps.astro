@@ -1,0 +1,77 @@
+---
+import Heading from "../ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+const collectiveLoginUrl = import.meta.env.PUBLIC_LOGIN_URL;
+
+const onboardingSteps = [
+  {
+    stepLabel: "01",
+    heading: "Sign up with AT Protocol",
+    body: "Log in with your existing Bluesky account or create a new AT Protocol identity. Your data stays yours — always.",
+    iconRef: "person",
+  },
+  {
+    stepLabel: "02",
+    heading: "Create your collections",
+    body: "Start building lists of things you love. Add books, movies, shows, music — anything you want to track. Mark them as \"want to\", \"in progress\", or \"completed\".",
+    iconRef: "dashboard",
+  },
+  {
+    stepLabel: "03",
+    heading: "Share and discover",
+    body: "Share your collections with the world or join groups to discover recommendations from people with great taste.",
+    iconRef: "paperplane",
+  },
+];
+---
+
+<section
+  class="scroll-m-16 px-8 max-sm:px-4 py-16"
+  id="how-it-works"
+  aria-label="How Collective Social works"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="text-center mb-12">
+      <Heading text="Get started in" textGradient="three steps." level={2} />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        onboardingSteps.map((step) => (
+          <div class="relative flex flex-col items-center text-center group">
+            <div class="mb-6 relative">
+              <div class="w-20 h-20 rounded-full bg-linear-to-r from-riptide-500/20 to-mint-500/20 dark:from-riptide-500/10 dark:to-mint-500/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                <Icon
+                  name={step.iconRef}
+                  class="w-8 h-8 text-mint-500"
+                  aria-hidden="true"
+                />
+              </div>
+              <span class="absolute -top-2 -right-2 text-5xl font-black text-mint-500/15 dark:text-mint-500/10 select-none">
+                {step.stepLabel}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-blacktext dark:text-white mb-3">
+              {step.heading}
+            </h3>
+            <p class="text-blacktext/70 dark:text-gray-400 leading-relaxed max-w-xs mx-auto">
+              {step.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center mt-12">
+      <a
+        href={collectiveLoginUrl}
+        class="z-2 text-center cursor-pointer leading-none hover:scale-110 w-fit font-bold flex gap-2 transition-all ease-in-out justify-center items-center rounded-full bg-linear-to-r from-riptide-500 to-mint-500 text-white px-8 py-4 text-lg hover:shadow-[0_10px_30px_rgba(13,188,130,0.4)]"
+        aria-label="Sign up for Collective Social"
+      >
+        <Icon name="rocket" class="w-5 h-5" aria-hidden="true" />
+        Get Started Now
+      </a>
+    </div>
+  </div>
+</section>

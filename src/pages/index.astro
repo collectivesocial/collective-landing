@@ -1,7 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroIndex from "../components/portfolio/HeroIndex.astro";
-import Contact from "../components/portfolio/Contact.astro";
+import MarketingHero from "../components/marketing/MarketingHero.astro";
+import FeatureShowcase from "../components/marketing/FeatureShowcase.astro";
+import GettingStartedSteps from "../components/marketing/GettingStartedSteps.astro";
+import OpenSourceBanner from "../components/marketing/OpenSourceBanner.astro";
+import ContactCTA from "../components/marketing/ContactCTA.astro";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
@@ -13,6 +16,9 @@ const { pageTitle, pageDescription, OGImage } = staticData.data;
   description={pageDescription}
   ogimage={{ alt: OGImage.alt, url: OGImage.url }}
 >
-  <HeroIndex />
-  <Contact />
+  <MarketingHero />
+  <FeatureShowcase />
+  <GettingStartedSteps />
+  <OpenSourceBanner />
+  <ContactCTA />
 </Layout>

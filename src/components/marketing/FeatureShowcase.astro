@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+import Heading from "../ui/Heading.astro";
+
+const collectiveFeatures = [
+  {
+    iconRef: "basket",
+    heading: "Curate Collections",
+    body: "Create lists of books, movies, TV shows, music, and more. Organize everything you love in one place.",
+  },
+  {
+    iconRef: "dashboard",
+    heading: "Track Your Progress",
+    body: "Mark items as want-to, in-progress, or completed. Add ratings and personal notes to everything you track.",
+  },
+  {
+    iconRef: "paperplane",
+    heading: "Share Recommendations",
+    body: "Share your collections and recommendations with friends, or discover what others are enjoying.",
+  },
+  {
+    iconRef: "person",
+    heading: "Join Communities",
+    body: "Create or join groups around shared interests. See what your community is reading, watching, and listening to.",
+  },
+  {
+    iconRef: "code",
+    heading: "Built on AT Protocol",
+    body: "Your data belongs to you. Built on the same decentralized technology behind Bluesky — portable and open.",
+  },
+  {
+    iconRef: "github",
+    heading: "Open Source",
+    body: "Collective Social is open source. Contribute, self-host, or build your own experience on top of it.",
+  },
+];
+---
+
+<section
+  class="scroll-m-16 px-8 max-sm:px-4 py-16"
+  id="features"
+  aria-label="Collective Social features"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="text-center mb-12">
+      <Heading
+        text="Everything you need to"
+        textGradient="track and share."
+        level={2}
+      />
+      <p
+        class="mt-4 text-lg text-blacktext/70 dark:text-gray-400 max-w-2xl mx-auto"
+      >
+        Powerful tools to organize your media life and connect with others who
+        share your taste.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        collectiveFeatures.map((feat) => (
+          <div class="group rounded-2xl bg-linear-to-r from-mint-300/50 dark:from-mint-600/50 to-mint-50/50 dark:to-mint-200/5 p-[.15rem] transition-all duration-300 hover:from-mint-300 hover:dark:from-mint-600 hover:to-mint-50 hover:dark:to-mint-200/5">
+            <div class="h-full rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-mint-950 dark:to-zinc-950 p-8 transition-all group-hover:shadow-[0_10px_50px_rgba(13,188,130,0.15)]">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-mint-500/10 dark:bg-mint-500/20">
+                  <Icon
+                    name={feat.iconRef}
+                    class="w-5 h-5 text-mint-500"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 class="text-xl font-bold text-blacktext dark:text-white">
+                  {feat.heading}
+                </h3>
+              </div>
+              <p class="text-blacktext/70 dark:text-gray-400 leading-relaxed">
+                {feat.body}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
