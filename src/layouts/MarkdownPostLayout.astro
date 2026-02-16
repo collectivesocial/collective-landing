@@ -2,7 +2,6 @@
 import Layout from "./Layout.astro";
 import DatePub from "../components/blog/DatePub.astro";
 import Tag from "../components/ui/Tag.astro";
-import Capsule from "../components/ui/Capsule.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import ListPosts from "../components/blog/ListPosts.astro";
 import NavigationArticles from "../components/layout/NavigationArticles.astro";
@@ -74,13 +73,6 @@ import Heading from "../components/ui/Heading.astro";
       class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
     >
       <header class="flex flex-col gap-4" id="start">
-        <div class="flex gap-2 flex-wrap">
-          {
-            frontmatter.languages.map((language: string) => (
-              <Capsule lang={language} />
-            ))
-          }
-        </div>
         <div class="gap-3 flex flex-wrap justify-start items-center">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag}>{tag}</Tag>)}
         </div>

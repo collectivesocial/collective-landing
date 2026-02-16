@@ -1,14 +1,11 @@
 ---
-import Button from "../ui/Button.astro";
 import LastPost from "../blog/LastPost.astro";
-import Languages from "../blog/Languages.astro";
 import { Icon } from "astro-icon/components";
 import Heading from "../ui/Heading.astro";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
 const {
-  techsTitle,
   github,
   githubText,
   profileAlt,
@@ -24,17 +21,7 @@ const {
     class="grid md:grid-cols-4 md:grid-rows-2 gap-4 max-sm:gap-3 grid-cols-2 grid-rows-4 max-w-7xl mx-auto max-md:h-[80vh] max-sm:h-auto max-sm:grid-rows-[auto_200px_auto_auto] max-xl:h-[550px] xl:h-[700px]"
   >
     <div
-      class="p-8 max-md:gap-0 max-xl:p-5 h-full max-md:p-4 max-lg:gap-1 gap-3 flex flex-col border border-copper-50 rounded-2xl dark:bg-sand-900 bg-linear-to-r from-copper-200 to-copper-300 dark:from-copper-500 dark:to-copper-600 dark:border-sand-800 dark:border-2 dark:bg-gradient-radial md:col-start-4 col-start-2 row-start-2"
-    >
-      <Heading text={techsTitle} textGradient="" level={3} />
-
-      <div class="overflow-y-auto">
-        <Languages />
-      </div>
-    </div>
-
-    <div
-      class="group hover:shadow-[0_20px_50px_rgba(194,112,62,0.4)] hover:scale-105 z-40 rounded-2xl transition-all ease-in duration-150 col-start-1 row-start-2 md:col-start-3 bg-linear-to-r from-copper-300 dark:from-copper-700 to-copper-50 dark:to-copper-200/5 hover:to-copper-300/30 dark:hover:to-copper-700/30 p-[.2rem]"
+      class="group hover:shadow-[0_20px_50px_rgba(194,112,62,0.4)] hover:scale-105 z-40 rounded-2xl transition-all ease-in duration-150 col-start-1 col-span-2 row-start-2 md:col-start-3 bg-linear-to-r from-copper-300 dark:from-copper-700 to-copper-50 dark:to-copper-200/5 hover:to-copper-300/30 dark:hover:to-copper-700/30 p-[.2rem]"
     >
       <div class="w-full h-full overflow-hidden rounded-2xl dark:bg-sand-950">
         <div
@@ -86,12 +73,6 @@ const {
             > 🚀</span
           >
           <Heading text={profileName} level={3} />
-          <Button
-            link={profileLink}
-            text="About Me"
-            iconName="person"
-            class="drop-shadow-xl"
-          />
         </div>
       </article>
     </div>
