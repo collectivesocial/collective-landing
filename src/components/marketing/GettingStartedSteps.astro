@@ -41,21 +41,21 @@ const onboardingSteps = [
         onboardingSteps.map((step) => (
           <div class="relative flex flex-col items-center text-center group">
             <div class="mb-6 relative">
-              <div class="w-20 h-20 rounded-full bg-linear-to-r from-riptide-500/20 to-mint-500/20 dark:from-riptide-500/10 dark:to-mint-500/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+              <div class="w-20 h-20 rounded-full bg-linear-to-r from-copper-400/20 to-copper-600/20 dark:from-copper-400/10 dark:to-copper-600/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                 <Icon
                   name={step.iconRef}
-                  class="w-8 h-8 text-mint-500"
+                  class="w-8 h-8 text-copper-500"
                   aria-hidden="true"
                 />
               </div>
-              <span class="absolute -top-2 -right-2 text-5xl font-black text-mint-500/15 dark:text-mint-500/10 select-none">
+              <span class="absolute -top-2 -right-2 text-5xl font-black text-copper-500/15 dark:text-copper-500/10 select-none">
                 {step.stepLabel}
               </span>
             </div>
             <h3 class="text-xl font-bold text-blacktext dark:text-white mb-3">
               {step.heading}
             </h3>
-            <p class="text-blacktext/70 dark:text-gray-400 leading-relaxed max-w-xs mx-auto">
+            <p class="text-blacktext/70 dark:text-sand-400 leading-relaxed max-w-xs mx-auto">
               {step.body}
             </p>
           </div>
@@ -66,7 +66,7 @@ const onboardingSteps = [
     <div class="flex justify-center mt-12">
       <a
         href={collectiveLoginUrl}
-        class="z-2 text-center cursor-pointer leading-none hover:scale-110 w-fit font-bold flex gap-2 transition-all ease-in-out justify-center items-center rounded-full bg-linear-to-r from-riptide-500 to-mint-500 text-white px-8 py-4 text-lg hover:shadow-[0_10px_30px_rgba(13,188,130,0.4)]"
+        class="z-2 text-center cursor-pointer leading-none hover:scale-110 w-fit font-bold flex gap-2 transition-all ease-in-out justify-center items-center rounded-full bg-linear-to-r from-copper-400 to-copper-600 text-white px-8 py-4 text-lg hover:shadow-[0_10px_30px_rgba(194,112,62,0.4)]"
         aria-label="Sign up for Collective Social"
       >
         <Icon name="rocket" class="w-5 h-5" aria-hidden="true" />

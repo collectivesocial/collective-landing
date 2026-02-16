@@ -8,30 +8,32 @@
   --font-montserrat: 'Montserrat', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
   --font-opensans: 'Open Sans', sans-serif;
-  --color-blacktext: #171717;
-  --color-mint-50: #ecfdf5;
-  --color-mint-100: #d0fbe5;
-  --color-mint-200: #a4f4cf;
-  --color-mint-300: #6ce9b7;
-  --color-mint-400: #31d69a;
-  --color-mint-500: #0dbc82;
-  --color-mint-600: #03986a;
-  --color-mint-700: #027a58;
-  --color-mint-800: #056047;
-  --color-mint-900: #054f3c;
-  --color-mint-950: #012d22;
+  --color-blacktext: #1a1511;
 
-  --color-riptide-50: #f0fdfa;
-  --color-riptide-100: #cbfcf1;
-  --color-riptide-200: #96f7e4;
-  --color-riptide-300: #5cecd5;
-  --color-riptide-400: #2bd6c1;
-  --color-riptide-500: #12baa8;
-  --color-riptide-600: #0b9689;
-  --color-riptide-700: #0e776f;
-  --color-riptide-800: #105f5a;
-  --color-riptide-900: #124f4b;
-  --color-riptide-950: #03302f;
+  /* Warm earthy palette — inspired by open-landing */
+  --color-sand-50: #faf6f1;
+  --color-sand-100: #f5f0ea;
+  --color-sand-200: #ede6dd;
+  --color-sand-300: #d9cfc3;
+  --color-sand-400: #c4b8aa;
+  --color-sand-500: #a89a8a;
+  --color-sand-600: #8a7d6f;
+  --color-sand-700: #6e6358;
+  --color-sand-800: #5c5047;
+  --color-sand-900: #3d342d;
+  --color-sand-950: #2a231d;
+
+  --color-copper-50: #fef5ee;
+  --color-copper-100: #f5e6d6;
+  --color-copper-200: #f0d0b0;
+  --color-copper-300: #e6ad7a;
+  --color-copper-400: #d98f55;
+  --color-copper-500: #c2703e;
+  --color-copper-600: #a85a30;
+  --color-copper-700: #8c4628;
+  --color-copper-800: #723a24;
+  --color-copper-900: #5a2d10;
+  --color-copper-950: #3a1a08;
 
   --animate-rotate: rotate 10s linear infinite;
 
@@ -50,18 +52,18 @@
 }
 
 ::selection {
-	@apply text-white bg-mint-500;
+	@apply text-white bg-copper-500;
 	
   }
 *::-webkit-scrollbar-thumb{
 	border-radius: 20px;
 }
 .dark *{
-	scrollbar-color: #6ce9b7 #012d22;
+	scrollbar-color: #c2703e #2a231d;
 	scrollbar-width: thin;
 }
  *{
-	scrollbar-color: #6ce9b7 #d0fbe5;
+	scrollbar-color: #c2703e #f5e6d6;
 	scrollbar-width: thin;
 	box-sizing: border-box;
 }
@@ -110,7 +112,7 @@ a.inline-block.leading-5.pl-12{
 }
 
 .markdown a {
-	@apply text-xl max-md:text-lg font-semibold dark:text-riptide-300! text-mint-500! underline hover:text-riptide-400! transition-all;
+	@apply text-xl max-md:text-lg font-semibold dark:text-copper-300! text-copper-600! underline hover:text-copper-400! transition-all;
 }
 
 .markdown ol{
@@ -128,12 +130,12 @@ a.inline-block.leading-5.pl-12{
 }
 
 .markdown hr {
-	@apply dark:text-mint-300/50 text-blacktext/30;
+	@apply dark:text-copper-300/50 text-blacktext/30;
 
 }
 
 .markdown blockquote {
-	@apply py-4 border-l-4 border-mint-500 pl-4 italic text-blacktext dark:text-mint-200 bg-mint-50 dark:bg-mint-900/20 backdrop-blur-lg mb-8;
+	@apply py-4 border-l-4 border-copper-500 pl-4 italic text-blacktext dark:text-copper-200 bg-sand-50 dark:bg-sand-950/20 backdrop-blur-lg mb-8;
 }
 
 .markdown blockquote p {
@@ -170,11 +172,11 @@ a.inline-block.leading-5.pl-12{
   }
   
   .task-list-item input[type="checkbox"] {
-	@apply w-5 h-5 accent-mint-300;
+	@apply w-5 h-5 accent-copper-300;
   }
   
   .task-list-item input[type="checkbox"]:checked + span {
-	@apply line-through text-mint-600;
+	@apply line-through text-copper-600;
   }
   
   .task-list-item span {
@@ -182,7 +184,7 @@ a.inline-block.leading-5.pl-12{
   }
 
 .expanded {
-	@apply transition-all duration-700 w-full flex! flex-col! left-0 top-full mt-4 absolute shadow-xl  dark:text-zinc-300 bg-linear-to-t from-white to-white/90 dark:from-zinc-950 dark:to-zinc-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100;
+	@apply transition-all duration-700 w-full flex! flex-col! left-0 top-full mt-4 absolute shadow-xl  dark:text-sand-300 bg-linear-to-t from-white to-white/90 dark:from-zinc-950 dark:to-zinc-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100;
 }
 
 
@@ -235,7 +237,7 @@ a.inline-block.leading-5.pl-12{
 	display: block;
 	width: 400px;
 	height: 400px;
-	background: #31d69a40;
+	background: rgba(194, 112, 62, 0.25);
 	bottom: -400px;
 	right: -300px;
 	position: fixed;
@@ -247,7 +249,7 @@ a.inline-block.leading-5.pl-12{
 
 
 .blur-circle {
-	background-color: rgba(87, 253, 228, 0.29);
+	background-color: rgba(194, 112, 62, 0.15);
 	position: absolute;
 	width: 200px;
 	height: 200px;
@@ -264,7 +266,7 @@ a.inline-block.leading-5.pl-12{
 	display: block;
 	width: 500px;
 	height: 500px;
-	background: #50fd8f25 !important;
+	background: rgba(194, 112, 62, 0.15) !important;
 	bottom: -150px;
 	right: -150px;
 	position: absolute;
